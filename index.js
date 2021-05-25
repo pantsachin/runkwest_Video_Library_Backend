@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Helloooooooo World!!!!");
 });
 
-app.listen(5503, () => {
-  console.log(`Example app listening at http://localhost:5503`);
+app.listen(process.env.PORT || 5503, () => {
+  console.log("Server Started :white_check_mark:");
 });
