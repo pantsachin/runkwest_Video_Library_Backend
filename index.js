@@ -3,6 +3,7 @@ var cors = require("cors");
 const bodyParser = require("body-parser");
 
 const { initializeDBConnection } = require("./database/database.connect.js");
+const { populateVideosDataBase } = require("./utils/utils.js");
 
 const app = express();
 app.use(cors());
