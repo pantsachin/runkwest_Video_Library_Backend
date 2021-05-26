@@ -7,7 +7,7 @@ const { populateVideosDataBase } = require("./utils/utils.js");
 const { errorHandler } = require("./middlewares/errorHandler.js");
 const { routeNotFound } = require("./middlewares/routeNotFound.js");
 
-// populateVideosDataBase();
+populateVideosDataBase();
 
 const app = express();
 app.use(cors());
