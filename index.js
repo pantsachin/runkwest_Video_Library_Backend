@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const { initializeDBConnection } = require("./database/database.connect.js");
 const { populateVideosDataBase } = require("./utils/utils.js");
 const { errorHandler } = require("./middlewares/errorHandler.js");
+const { routeNotFound } = require("./middlewares/routeNotFound.js");
 
 // populateVideosDataBase();
 
