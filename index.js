@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const { initializeDBConnection } = require("./database/database.connect.js");
 const { populateVideosDataBase } = require("./utils/utils.js");
 
-populateVideosDataBase();
+// populateVideosDataBase();
 
 const app = express();
 app.use(cors());
