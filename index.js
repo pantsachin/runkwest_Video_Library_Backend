@@ -1,5 +1,14 @@
 const express = require("express");
+var cors = require("cors");
+const bodyParser = require("body-parser");
+
+const { initializeDBConnection } = require("./database/database.connect.js");
+
 const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+initializeDBConnection();
 
 app.get("/", (req, res) => {
   res.send("Helloooooooo World!!!!");
