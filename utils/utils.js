@@ -1,4 +1,4 @@
-const videosDataBase = require("../database/database.connect.js");
+const { videosDataBase } = require("../data/videosDataBase.js");
 const { Video } = require("../models/video.model.js");
 
 function populateVideosDataBase() {

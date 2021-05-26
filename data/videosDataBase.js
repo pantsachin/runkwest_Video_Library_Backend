@@ -258,4 +258,4 @@ const videosDataBase = [
   },
 ];
 
-module.exports = videosDataBase;
+module.exports = { videosDataBase };
