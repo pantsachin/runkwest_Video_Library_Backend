@@ -1,6 +1,6 @@
 const videosDataBase = [
   {
-    v_id: "C7NnlF0-p60",
+    videoId: "C7NnlF0-p60",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/C7NnlF0-p60/maxresdefault.jpg",
     title:
@@ -17,7 +17,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "h1OJNfVDm3U",
+    videoId: "h1OJNfVDm3U",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/h1OJNfVDm3U/maxresdefault.jpg",
     title: "BEST HALF MARATHON TRAINING TIPS AND ADVICE | Sage Canaday",
@@ -33,7 +33,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "1y38C1JLn8w",
+    videoId: "1y38C1JLn8w",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/1y38C1JLn8w/hqdefault.jpg",
     title: "How I Trained for a Half Marathon in 30 Days | Karlie Kloss",
@@ -49,7 +49,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "2WuB8BhUJrc",
+    videoId: "2WuB8BhUJrc",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/2WuB8BhUJrc/maxresdefault.jpg",
     title: "The Science of Marathon Running",
@@ -65,7 +65,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "fQ7ewHFw_I8",
+    videoId: "fQ7ewHFw_I8",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/fQ7ewHFw_I8/maxresdefault.jpg",
     title: "How To Run Properly For Beginners - 5 Running Secrets",
@@ -80,7 +80,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "FH3H_wHqPxY",
+    videoId: "FH3H_wHqPxY",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/FH3H_wHqPxY/maxresdefault.jpg",
     title:
@@ -97,7 +97,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "KSFMAsd-Dok",
+    videoId: "KSFMAsd-Dok",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/KSFMAsd-Dok/maxresdefault.jpg",
     title: "Marathon Training: the 2 hour Principle",
@@ -113,7 +113,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "Ay3ckhONBhk",
+    videoId: "Ay3ckhONBhk",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/Ay3ckhONBhk/maxresdefault.jpg",
     title: "5 Things I Wish I Knew Before Running My First Half Marathon",
@@ -129,7 +129,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "ikQvFihgyjo",
+    videoId: "ikQvFihgyjo",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/ikQvFihgyjo/maxresdefault.jpg",
     title: "How I Trained for a Marathon in Two Weeks",
@@ -145,7 +145,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "brFHyOtTwH4",
+    videoId: "brFHyOtTwH4",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/brFHyOtTwH4/maxresdefault.jpg",
     title: "What Is Perfect Running Form? | Run Technique Tips For All Runners",
@@ -161,7 +161,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "3RlvKMxPMr0",
+    videoId: "3RlvKMxPMr0",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/3RlvKMxPMr0/maxresdefault.jpg",
     title:
@@ -178,7 +178,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "V-2szNtHea4",
+    videoId: "V-2szNtHea4",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/V-2szNtHea4/hqdefault.jpg",
     title: "Proper Breathing While Running | How To",
@@ -194,7 +194,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "gsUL3a1CxUQ",
+    videoId: "gsUL3a1CxUQ",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/gsUL3a1CxUQ/maxresdefault.jpg",
     title: "Running Form: Correct Technique and Tips to Avoid Injury",
@@ -210,7 +210,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "XsRD2gU1LaA",
+    videoId: "XsRD2gU1LaA",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/XsRD2gU1LaA/hqdefault.jpg",
     title:
@@ -227,7 +227,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "rlzQf9mZDKg",
+    videoId: "rlzQf9mZDKg",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/rlzQf9mZDKg/maxresdefault.jpg",
     title: "Running Technique Drills | 3 Drills For Beginners",
@@ -243,7 +243,7 @@ const videosDataBase = [
   },
 
   {
-    v_id: "ximZfmqh2hI",
+    videoId: "ximZfmqh2hI",
     category: "Sports and Fitness",
     avatar: "http://i3.ytimg.com/vi/ximZfmqh2hI/maxresdefault.jpg",
     title: "Pre-Workout Dynamic Stretching Routine",
