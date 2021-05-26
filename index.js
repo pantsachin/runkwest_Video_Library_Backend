@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 initializeDBConnection();
 
 app.get("/", (req, res) => {
-  res.send("Helloooooooo World!!!!");
+  res.send("Hello World!!!!");
 });
 
 app.listen(process.env.PORT || 5503, () => {
