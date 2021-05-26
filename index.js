@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 app.use(errorHandler);
 app.use(routeNotFound);
 
-populateVideosDataBase();
+// populateVideosDataBase();
 
 app.listen(process.env.PORT || 5503, () => {
   console.log("Server Started :white_check_mark:");
