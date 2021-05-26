@@ -7,8 +7,6 @@ const { populateVideosDataBase } = require("./utils/utils.js");
 const { errorHandler } = require("./middlewares/errorHandler.js");
 const { routeNotFound } = require("./middlewares/routeNotFound.js");
 
-populateVideosDataBase();
-
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -21,6 +19,8 @@ app.get("/", (req, res) => {
 
 app.use(errorHandler);
 app.use(routeNotFound);
+
+populateVideosDataBase();
 
 app.listen(process.env.PORT || 5503, () => {
   console.log("Server Started :white_check_mark:");
