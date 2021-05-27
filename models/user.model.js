@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-  _id: Schema.Types.ObjectId,
   userName: String,
   userPassword: String,
   userWatchLaterList: [{ type: Schema.Types.ObjectId, ref: "Video" }],
