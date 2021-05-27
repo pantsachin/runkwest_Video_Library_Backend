@@ -3,9 +3,7 @@ const { User } = require("../models/user.model.js");
 const createUser = async (req, res) => {
   console.log(req.body);
   try {
-    const { userName, userPassword } = req.body;
-    const user = { userName, userPassword };
-    const NewUser = new User(user);
+    const NewUser = new User(req.body);
     const saveNewUser = await NewUser.save();
     res.status(200).json({ success: true, saveNewUser });
   } catch (error) {
