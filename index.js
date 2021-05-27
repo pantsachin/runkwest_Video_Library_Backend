@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const videos = require("./routes/getVideosDataBase.router.js");
-const users = require("./routes/createUser.router.js");
+const users = require("./routes/User.router.js");
 
 initializeDBConnection();
 

@@ -1,4 +1,5 @@
 const { User } = require("../models/user.model.js");
+const { Video } = require("../models/video.model.js");
 
 const createUser = async (req, res) => {
   console.log(req.body);
@@ -15,4 +16,30 @@ const createUser = async (req, res) => {
   }
 };
 
-module.exports = { createUser };
+const addVideoToWatchLaterForAUser = async (req, res) => {
+  try {
+    const { userName, videoId } = req.body;
+    const videoToBeAdded = await Video.findOne({ videoId: videoId });
+    console.log(videoToBeAdded);
+
+    const userToBeUpdated = await User.findOne({ userName: userName });
+
+    userToBeUpdated.userWatchLaterList.push(videoToBeAdded);
+
+    const updatedUser = await userToBeUpdated.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Successfully added video to watch later list",
+      updatesUser,
+    });
+  } catch (error) {
+    console.error(error);
+    res.json({
+      success: false,
+      message: "Error, adding to the watch later list",
+    });
+  }
+};
+
+module.exports = { createUser, addVideoToWatchLaterForAUser };
