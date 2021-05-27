@@ -18,6 +18,7 @@ initializeDBConnection();
 
 app.get("/", videos);
 app.post("/login", users);
+app.post("/watch-later", users);
 
 app.use(errorHandler);
 app.use(routeNotFound);
