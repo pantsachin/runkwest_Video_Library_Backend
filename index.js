@@ -11,6 +11,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const { videos } = require("./routes/getVideosDataBase.router.js");
+
 initializeDBConnection();
 
 app.get("/", (req, res) => {
