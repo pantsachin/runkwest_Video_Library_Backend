@@ -15,9 +15,7 @@ const { videos } = require("./routes/getVideosDataBase.router.js");
 
 initializeDBConnection();
 
-app.get("/", (req, res) => {
-  res.send("Hello World!!!!");
-});
+app.get("/", videos);
 
 app.use(errorHandler);
 app.use(routeNotFound);
