@@ -6,4 +6,4 @@ const {
 
 router.route("/").get(getVideosDataBase);
 
-module.exports = { router };
+module.exports = router;
