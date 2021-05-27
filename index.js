@@ -12,10 +12,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const videos = require("./routes/getVideosDataBase.router.js");
+const users = require("./routes/createUser.router.js");
 
 initializeDBConnection();
 
 app.get("/", videos);
+app.post("/login", users);
 
 app.use(errorHandler);
 app.use(routeNotFound);
