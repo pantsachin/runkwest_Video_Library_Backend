@@ -31,7 +31,7 @@ const addVideoToWatchLaterForAUser = async (req, res) => {
     res.status(200).json({
       success: true,
       message: "Successfully added video to watch later list",
-      updatesUser,
+      updatedUser,
     });
   } catch (error) {
     console.error(error);
