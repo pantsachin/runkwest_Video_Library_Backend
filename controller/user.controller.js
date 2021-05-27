@@ -24,7 +24,7 @@ const addVideoToWatchLaterForAUser = async (req, res) => {
 
     const userToBeUpdated = await User.findOne({ userName: userName });
 
-    userToBeUpdated.userWatchLaterList.push(videoToBeAdded);
+    userToBeUpdated.userWatchLaterList.push(videoToBeAdded._id);
 
     const updatedUser = await userToBeUpdated.save();
 
