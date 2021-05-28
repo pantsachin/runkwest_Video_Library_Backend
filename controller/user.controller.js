@@ -57,7 +57,11 @@ const removeVideoFromWatchLaterForAUser = async (req, res) => {
       video.toString() !== videoToBeDeleted._id.toString();
     });
 
+    console.log("userToBeUpdated", userToBeUpdated);
+
     const updatedUser = await userToBeUpdated.save();
+
+    console.log("updatedUser", updatedUser);
 
     res.status(200).json({
       success: true,
