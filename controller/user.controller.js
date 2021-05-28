@@ -46,8 +46,8 @@ const addVideoToWatchLaterForAUser = async (req, res) => {
 const removeVideoFromWatchLaterForAUser = async (req, res) => {
   try {
     const { userName, videoId } = req.body;
-    const videoToBeDeleted = await Video.find({ videoId: videoId });
-    const userToBeUpdated = await User.find({ userName: userName });
+    const videoToBeDeleted = await Video.findOne({ videoId: videoId });
+    const userToBeUpdated = await User.findOne({ userName: userName });
 
     userToBeUpdated.userWatchLaterList.filter(
       (video) => video !== videoToBeDeleted._id
