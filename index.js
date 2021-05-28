@@ -16,10 +16,10 @@ const users = require("./routes/User.router.js");
 
 initializeDBConnection();
 
-app.use("/", videos);
-app.use("/login", users);
-app.use("/watch-later", users);
-app.use("/remove-watch-later, users");
+app.get("/", videos);
+app.post("/login", users);
+app.post("/watch-later", users);
+app.post("/remove-watch-later, users");
 
 app.use(errorHandler);
 app.use(routeNotFound);
