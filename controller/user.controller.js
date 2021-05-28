@@ -53,10 +53,12 @@ const removeVideoFromWatchLaterForAUser = async (req, res) => {
       (video) => video !== videoToBeDeleted._id
     );
 
+    const updatedUser = await userToBeUpdated.save();
+
     res.status(200).json({
       success: true,
       message: "video removed from the playlist",
-      userToBeUpdated,
+      updatedUser,
     });
   } catch (error) {
     console.error(error);
