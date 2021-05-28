@@ -19,7 +19,7 @@ initializeDBConnection();
 app.get("/", videos);
 app.post("/login", users);
 app.post("/watch-later", users);
-app.post("/remove-watch-later", users);
+app.post("/watch-later-remove", users);
 
 app.use(errorHandler);
 app.use(routeNotFound);

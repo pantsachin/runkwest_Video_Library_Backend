@@ -10,6 +10,6 @@ const {
 router.route("/login").post(createUser);
 
 router.route("/watch-later").post(addVideoToWatchLaterForAUser);
-router.route("/remove-watch-later").post(removeVideoFromWatchLaterForAUser);
+router.route("/watch-later-remove").post(removeVideoFromWatchLaterForAUser);
 
 module.exports = router;
