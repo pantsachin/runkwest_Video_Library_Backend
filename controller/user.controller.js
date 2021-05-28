@@ -50,6 +50,7 @@ const removeVideoFromWatchLaterForAUser = async (req, res) => {
     const userToBeUpdated = await User.findOne({ userName: userName });
 
     console.log(userToBeUpdated);
+    console.log(videoToBeDeleted._id);
 
     userToBeUpdated.userWatchLaterList.filter((video) => {
       console.log(typeof video.toString());
