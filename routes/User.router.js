@@ -7,9 +7,9 @@ const {
   removeVideoFromWatchLaterForAUser,
 } = require("../controller/user.controller.js");
 
-router.route("/login").post(createUser);
+router.route("/").post(createUser);
 
-router.route("/watch-later").post(addVideoToWatchLaterForAUser);
-router.route("/watch-later-remove").post(removeVideoFromWatchLaterForAUser);
+router.route("/add").post(addVideoToWatchLaterForAUser);
+router.route("/remove").post(removeVideoFromWatchLaterForAUser);
 
 module.exports = router;
