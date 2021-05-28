@@ -20,6 +20,7 @@ const addVideoToWatchLaterForAUser = async (req, res) => {
   try {
     const { userName, videoId } = req.body;
     const videoToBeAdded = await Video.findOne({ videoId: videoId });
+
     console.log(videoToBeAdded);
 
     const userToBeUpdated = await User.findOne({ userName: userName });
@@ -35,11 +36,39 @@ const addVideoToWatchLaterForAUser = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.json({
+    res.status(500).json({
       success: false,
       message: "Error, adding to the watch later list",
     });
   }
 };
 
-module.exports = { createUser, addVideoToWatchLaterForAUser };
+const removeVideoFromWatchLaterForAUser = async (req, res) => {
+  try {
+    const { userName, videoId } = req.body;
+    const videoToBeDeleted = await Video.find({ videoId: videoId });
+    const userToBeUpdated = await User.find({ userName: userName });
+
+    userToBeUpdated.userWatchLaterList.filter(
+      (video) => video !== videoToBeDeleted._id
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "video removed from the playlist",
+      userToBeUpdated,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "couldn't remove from the watch later list!",
+    });
+  }
+};
+
+module.exports = {
+  createUser,
+  addVideoToWatchLaterForAUser,
+  removeVideoFromWatchLaterForAUser,
+};
