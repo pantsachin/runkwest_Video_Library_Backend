@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 const videos = require("./routes/getVideosDataBase.router.js");
 const users = require("./routes/User.router.js");
+const playlist = require("./routes/playlist.router.js");
 
 initializeDBConnection();
 
@@ -20,6 +21,7 @@ app.get("/", videos);
 app.post("/login", users);
 app.use("/watchLater", users);
 app.use("/watchLater", users);
+app.use("creeatePlaylist", playlist);
 
 app.use(errorHandler);
 app.use(routeNotFound);
