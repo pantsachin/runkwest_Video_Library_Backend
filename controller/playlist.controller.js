@@ -71,7 +71,7 @@ const addToExistingUserPlaylist = async (req, res) => {
     console.log("userPlaylist - ", userPlaylist);
 
     userPlaylist.userplaylists.map((playlist) =>
-      playlist.playlistName == playlistname
+      playlist.playlistName == playlistName
         ? playlist.playlistArray.push(video._id)
         : playlist
     );
