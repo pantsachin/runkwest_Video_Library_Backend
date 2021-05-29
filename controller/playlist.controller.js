@@ -64,14 +64,16 @@ const addToExistingUserPlaylist = async (req, res) => {
     const { userName, playlistName, videoId } = req.body;
     const userPlaylist = await User.findOne({ userName: userName });
     const video = await Video.find({ videoId: videoId });
+
+    console.log("userPlaylist - ", userPlaylist);
+
     userPlaylist.userplaylists.map((playlist) =>
       playlist.playlistName == playlistname
         ? playlist.playlistArray.push(video._id)
         : playlist
     );
 
-    console.log("userPlaylist - ", userPlaylist);
-    const savedPlaylist = userPlaylist.save();
+    const savedUser = userPlaylist.save();
     res.status(200).json({
       success: true,
       savedPlaylist,
