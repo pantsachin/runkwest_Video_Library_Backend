@@ -21,7 +21,7 @@ app.get("/", videos);
 app.post("/login", users);
 app.use("/watchLater", users);
 app.use("/watchLater", users);
-app.use("creeatePlaylist", playlist);
+app.post("creeatePlaylist", playlist);
 
 app.use(errorHandler);
 app.use(routeNotFound);
