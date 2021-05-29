@@ -3,6 +3,6 @@ const router = express.Router();
 
 const { createPlaylist } = require("../controller/playlist.controller.js");
 
-router.route("/newPlaylist").post(createPlaylist);
+router.route("/").post(createPlaylist);
 
 module.exports = router;
