@@ -10,10 +10,9 @@ const createUserPlaylist = async (req, res) => {
 
     const NewPlaylist = new Playlist({
       userId: user._id,
-      userplaylists: userplaylists.push({
-        playlistName: playlistName,
-        playlistArray: playlistArray.push(videoToBeAdded._id),
-      }),
+      userplaylists: [
+        { playlistName: playlistName, playlistArray: [videoToBeAdded._id] },
+      ],
     });
 
     const saveUserPlaylist = await NewPlaylist.save();
