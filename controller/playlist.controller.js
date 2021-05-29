@@ -38,13 +38,12 @@ const addToUserPlaylist = async (req, res) => {
     });
     const videoToBeAdded = await Video.findOne({ videoId: videoId });
 
-    const updatedPlaylist = userPlaylistToBeUpdated.userplaylists.push({
+    userPlaylistToBeUpdated.userplaylists.push({
       playlistName: playlistName,
       playlistArray: [videoToBeAdded._id],
     });
 
-    console.log("updatedPlaylist", updatedPlaylist);
-    const saveUpdatedPlaylist = await updatedPlaylist.save();
+    const saveUpdatedPlaylist = await userPlaylistToBeUpdated.save();
 
     res.status(200).json({
       success: true,
