@@ -40,7 +40,7 @@ const addToUserPlaylist = async (req, res) => {
 
     const uodatedPlaylist = userPlaylistToBeUpdated.userplaylists.push({
       playlistName: playlistName,
-      playlistArray: playlistArray.push(videoToBeAdded._id),
+      playlistArray: [videoToBeAdded._id],
     });
   } catch (error) {
     console.error(error);
