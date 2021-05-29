@@ -5,7 +5,7 @@ const { Video } = require("../models/video.model.js");
 //on add to playlist this will be created for a user
 const createUserPlaylist = async (req, res) => {
   try {
-    const { userName, playlistName, videoId } = req.body;
+    const { userName, videoId } = req.body;
     const user = await User.findOne({ userName: userName });
     const videoToBeAdded = await Video.findOne({ videoId: videoId });
 
@@ -29,6 +29,28 @@ const createUserPlaylist = async (req, res) => {
   }
 };
 
+const addToUserPlaylist = async (req, res) => {
+  try {
+    const { userName, videoId, playlistName } = req.body;
+    const user = await User.findOne({ userName: userName });
+    const userPlaylistToBeUpdated = await Playlist.findOne({
+      userId: user._id,
+    });
+    const videoToBeAdded = await Video.findOne({ videoId: videoId });
+
+    const uodatedPlaylist = userPlaylistToBeUpdated.userplaylists.push({
+      playlistName: playlistName,
+      playlistArray: playlistArray.push(videoToBeAdded._id),
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: fail,
+      message: "failed to add playlist and video, please try again!",
+    });
+  }
+};
+
 // const addToExistingUserPlaylist = async (req, res) => {
 //   try {
 //     const { userName, playlistName, videoId } = req.body;
@@ -43,4 +65,4 @@ const createUserPlaylist = async (req, res) => {
 //   }
 // };
 
-module.exports = { createUserPlaylist };
+module.exports = { createUserPlaylist, addToUserPlaylist };

@@ -1,8 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const { createUserPlaylist } = require("../controller/playlist.controller.js");
+const {
+  createUserPlaylist,
+  addToUserPlaylist,
+} = require("../controller/playlist.controller.js");
 
 router.route("/").post(createUserPlaylist);
+router.route("/add").post(addToUserPlaylist);
 
 module.exports = router;
