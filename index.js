@@ -16,7 +16,7 @@ const users = require("./routes/User.router.js");
 
 initializeDBConnection();
 
-app.use("/", videos);
+app.get("/", videos);
 app.post("/login", users);
 app.use("/watchLater", users);
 app.use("/watchLater", users);
