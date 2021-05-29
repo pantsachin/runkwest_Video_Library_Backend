@@ -5,6 +5,7 @@ const createPlaylist = async (req, res) => {
   try {
     const { userName, playlistName } = req.body;
     const user = User.findOne({ userName: userName });
+    console.log("user", user);
     console.log("userID", user._id);
     const NewPlaylist = new Playlist({
       user: user._id,
