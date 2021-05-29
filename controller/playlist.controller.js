@@ -2,6 +2,7 @@ const Playlist = require("../models/playlist.model.js");
 const { User } = require("../models/user.model.js");
 const { Video } = require("../models/video.model.js");
 
+//on add to playlist this will be created for a user
 const createUserPlaylist = async (req, res) => {
   try {
     const { userName, playlistName, videoId } = req.body;
@@ -10,9 +11,6 @@ const createUserPlaylist = async (req, res) => {
 
     const NewPlaylist = new Playlist({
       userId: user._id,
-      userplaylists: [
-        { playlistName: playlistName, playlistArray: [videoToBeAdded._id] },
-      ],
     });
 
     const saveUserPlaylist = await NewPlaylist.save();
@@ -30,5 +28,19 @@ const createUserPlaylist = async (req, res) => {
     });
   }
 };
+
+// const addToExistingUserPlaylist = async (req, res) => {
+//   try {
+//     const { userName, playlistName, videoId } = req.body;
+//     const user = await User.findOne({ userName: userName });
+//     const userPlaylistToBeUpdated = await Playlist.findOne({ userId: user._id });
+//     const video = await Video.findOne({videoId: videoId});
+
+//     const userPlaylistToBeUpdated.userplaylists.findOne({})
+
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
 module.exports = { createUserPlaylist };
