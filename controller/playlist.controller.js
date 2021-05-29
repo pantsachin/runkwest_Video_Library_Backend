@@ -38,9 +38,17 @@ const addToUserPlaylist = async (req, res) => {
     });
     const videoToBeAdded = await Video.findOne({ videoId: videoId });
 
-    const uodatedPlaylist = userPlaylistToBeUpdated.userplaylists.push({
+    const updatedPlaylist = userPlaylistToBeUpdated.userplaylists.push({
       playlistName: playlistName,
       playlistArray: [videoToBeAdded._id],
+    });
+
+    const saveUpdatedPlaylist = await updatedPlaylist.save();
+
+    re.status(200).json({
+      success: true,
+      saveUpdatedPlaylist,
+      message: "playlist was successfully added!",
     });
   } catch (error) {
     console.error(error);
