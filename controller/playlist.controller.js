@@ -62,7 +62,10 @@ const addToUserPlaylist = async (req, res) => {
 const addToExistingUserPlaylist = async (req, res) => {
   try {
     const { userName, playlistName, videoId } = req.body;
-    const userPlaylist = await User.findOne({ userName: userName });
+    const user = await User.findOne({ userName: userName });
+    const userPlaylist = await Playlist.findOne({
+      userId: user._id,
+    });
     const video = await Video.find({ videoId: videoId });
 
     console.log("userPlaylist - ", userPlaylist);
