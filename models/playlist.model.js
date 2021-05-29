@@ -4,7 +4,7 @@ const { User } = require("./user.model.js");
 const { Video } = require("./video.model.js");
 
 const PlaylistSchema = new Schema({
-  user: { type: Schema.Types.ObjectId, ref: "User" },
+  userId: { type: Schema.Types.ObjectId, ref: "User", unique: true },
   userplaylists: [
     {
       playlistName: { type: String, unique: true },

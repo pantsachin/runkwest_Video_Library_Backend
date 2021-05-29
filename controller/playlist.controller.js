@@ -8,7 +8,7 @@ const createPlaylist = async (req, res) => {
     console.log("user", user);
     console.log("userID", user._id);
     const NewPlaylist = new Playlist({
-      user: user._id,
+      userId: user._id,
       userplaylists: [{ playlistName: playlistName, playlistArray: [] }],
     });
 
