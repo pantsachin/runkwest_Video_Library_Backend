@@ -59,6 +59,33 @@ const addToUserPlaylist = async (req, res) => {
   }
 };
 
+const addToExistingUserPlaylist = async (req, res) => {
+  try {
+    const { userName, playlistName, videoId } = req.body;
+    const userPlaylist = await User.findOne({ userName: userName });
+    const video = await Video.find({ videoId: videoId });
+    userPlaylist.userplaylists.map((playlist) =>
+      playlist.playlistName == playlistname
+        ? playlist.playlistArray.push(video._id)
+        : playlist
+    );
+
+    console.log("userPlaylist - ", userPlaylist);
+    const savedPlaylist = userPlaylist.save();
+    res.status(200).json({
+      success: true,
+      savedPlaylist,
+      message: "The video has been added to the playlist",
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message:
+        "Coudln't add the playlist to the playlistArray, please try agian!",
+    });
+  }
+};
 // const addToExistingUserPlaylist = async (req, res) => {
 //   try {
 //     const { userName, playlistName, videoId } = req.body;
@@ -73,4 +100,8 @@ const addToUserPlaylist = async (req, res) => {
 //   }
 // };
 
-module.exports = { createUserPlaylist, addToUserPlaylist };
+module.exports = {
+  createUserPlaylist,
+  addToUserPlaylist,
+  addToExistingUserPlaylist,
+};

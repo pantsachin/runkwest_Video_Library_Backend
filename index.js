@@ -23,6 +23,7 @@ app.use("/watchLater", users);
 app.use("/watchLater", users);
 app.use("/createUserPlaylist", playlist);
 app.use("/createUserPlaylist", playlist);
+app.use("/createUserPlaylist", playlist);
 
 app.use(errorHandler);
 app.use(routeNotFound);
