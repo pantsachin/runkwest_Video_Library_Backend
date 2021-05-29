@@ -18,7 +18,7 @@ const playlist = require("./routes/playlist.router.js");
 initializeDBConnection();
 
 app.get("/", videos);
-app.post("/login", users);
+app.use("/login", users);
 app.use("/watchLater", users);
 app.use("/watchLater", users);
 app.use("/createPlaylist", playlist);
