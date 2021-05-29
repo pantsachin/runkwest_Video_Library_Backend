@@ -1,4 +1,5 @@
 const Playlist = require("../models/playlist.model.js");
+const { User } = require("../models/user.model.js");
 
 const createPlaylist = async (req, res) => {
   try {
