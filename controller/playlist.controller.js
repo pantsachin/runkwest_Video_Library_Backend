@@ -1,15 +1,19 @@
 const Playlist = require("../models/playlist.model.js");
 const { User } = require("../models/user.model.js");
+const { Video } = require("../models/video.model.js");
 
-const createPlaylist = async (req, res) => {
+const createUserPlaylist = async (req, res) => {
   try {
-    const { userName, playlistName } = req.body;
+    const { userName, playlistName, videoId } = req.body;
     const user = await User.findOne({ userName: userName });
-    console.log("user", user);
-    console.log("userID", user._id);
+    const videoToBeAdded = await Video.findOne({ videoId: videoId });
+
     const NewPlaylist = new Playlist({
       userId: user._id,
-      userplaylists: [{ playlistName: playlistName, playlistArray: [] }],
+      userplaylists: userplaylists.push({
+        playlistName: playlistName,
+        playlistArray: playlistArray.push(videoToBeAdded._id),
+      }),
     });
 
     const saveUserPlaylist = await NewPlaylist.save();
@@ -28,4 +32,4 @@ const createPlaylist = async (req, res) => {
   }
 };
 
-module.exports = { createPlaylist };
+module.exports = { createUserPlaylist };
