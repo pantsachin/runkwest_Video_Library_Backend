@@ -45,7 +45,7 @@ const addToUserPlaylist = async (req, res) => {
 
     const saveUpdatedPlaylist = await updatedPlaylist.save();
 
-    re.status(200).json({
+    res.status(200).json({
       success: true,
       saveUpdatedPlaylist,
       message: "playlist was successfully added!",
