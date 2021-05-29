@@ -43,6 +43,7 @@ const addToUserPlaylist = async (req, res) => {
       playlistArray: [videoToBeAdded._id],
     });
 
+    console.log("updatedPlaylist", updatedPlaylist);
     const saveUpdatedPlaylist = await updatedPlaylist.save();
 
     res.status(200).json({
