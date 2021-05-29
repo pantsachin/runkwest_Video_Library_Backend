@@ -79,7 +79,7 @@ const addToExistingUserPlaylist = async (req, res) => {
     const savedUser = userPlaylist.save();
     res.status(200).json({
       success: true,
-      savedPlaylist,
+      savedUser,
       message: "The video has been added to the playlist",
     });
   } catch (error) {
