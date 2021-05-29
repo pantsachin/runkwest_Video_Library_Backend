@@ -69,6 +69,7 @@ const addToExistingUserPlaylist = async (req, res) => {
     const video = await Video.find({ videoId: videoId });
 
     console.log("userPlaylist - ", userPlaylist);
+    console.log(video._id);
 
     userPlaylist.userplaylists.map((playlist) =>
       playlist.playlistName == playlistName
