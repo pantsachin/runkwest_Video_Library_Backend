@@ -76,7 +76,7 @@ const addToExistingUserPlaylist = async (req, res) => {
     );
 
     userPlaylist.populate("playlistArray");
-    console.log("userPlaylist-populated".userPlaylist);
+    console.log("userPlaylist-populated", userPlaylist);
 
     const savedUser = await userPlaylist.save();
     console.log("savedUser", savedUser);
