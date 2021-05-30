@@ -65,7 +65,7 @@ const addToExistingUserPlaylist = async (req, res) => {
     const user = await User.findOne({ userName: userName });
     const userPlaylist = await Playlist.findOne({
       userId: user._id,
-    });
+    }).populate("playlistArray");
     const video = await Video.findOne({ videoId: videoId });
 
     userPlaylist.userplaylists.map((playlist) =>
@@ -75,6 +75,7 @@ const addToExistingUserPlaylist = async (req, res) => {
     );
 
     const savedUser = userPlaylist.save();
+
     res.status(200).json({
       success: true,
       savedUser,
