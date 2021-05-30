@@ -75,7 +75,7 @@ const addToExistingUserPlaylist = async (req, res) => {
     );
 
     const savedUser = userPlaylist.save();
-    console.log(savedUser);
+    console.log("savedUser", savedUser);
 
     res.status(200).json({
       success: true,
