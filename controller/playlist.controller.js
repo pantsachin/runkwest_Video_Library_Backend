@@ -45,6 +45,7 @@ const addToUserPlaylist = async (req, res) => {
 
     const saveUpdatedPlaylist = await userPlaylistToBeUpdated.save();
 
+    //population
     const userPlaylistToBePopulatedAndSent = await Playlist.findOne({
       userId: user._id,
     }).populate("userplaylists.playlistArray");
