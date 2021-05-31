@@ -23,11 +23,12 @@ const addVideoToWatchLaterForAUser = async (req, res) => {
 
     console.log(videoToBeAdded);
 
-    const userToBeUpdated = await User.findOne({ userName: userName });
+    const userToBeUpdated = await User.findOne({ userName: userName }).poulate(
+      "userWatchLaterList"
+    );
 
     userToBeUpdated.userWatchLaterList.push(videoToBeAdded._id);
 
-    userToBeUpdated.populate("userWatchLaterList");
     const updatedUser = await userToBeUpdated.save();
 
     res.status(200).json({
