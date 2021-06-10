@@ -81,15 +81,21 @@ const addToExistingUserPlaylist = async (req, res) => {
         : playlist
     );
 
-    userPlaylist.populate("playlistArray");
-    console.log("userPlaylist-populated", userPlaylist);
-
     const savedUser = await userPlaylist.save();
-    console.log("savedUser", savedUser);
+
+    const userPlaylistToBePopulatedAndSent = await Playlist.findOne({
+      userId: user._id,
+    }).populate("userplaylists.playlistArray");
+
+    console.log(
+      "userPlaylistToBePopulatedAndSent",
+      userPlaylistToBePopulatedAndSent
+    );
 
     res.status(200).json({
       success: true,
       savedUser,
+      userPlaylistToBePopulatedAndSent,
       message: "The video has been added to the playlist",
     });
   } catch (error) {
