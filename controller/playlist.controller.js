@@ -59,7 +59,7 @@ const addToUserPlaylist = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({
-      success: fail,
+      success: false,
       message: "failed to add playlist and video, please try again!",
     });
   }
