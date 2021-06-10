@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 const videos = require("./routes/getVideosDataBase.router.js");
 const users = require("./routes/User.router.js");
 const playlist = require("./routes/playlist.router.js");
+const userData = require("./routes/loginUserDataFetch.router.js");
 
 initializeDBConnection();
 
@@ -24,6 +25,7 @@ app.use("/watchLater", users);
 app.use("/createUserPlaylist", playlist);
 app.use("/createUserPlaylist", playlist);
 app.use("/createUserPlaylist", playlist);
+app.use("/fetchUserDataOnLogin", userData);
 
 app.use(errorHandler);
 app.use(routeNotFound);

@@ -21,3 +21,5 @@ const userDataOnLogin = async (req, res) => {
       .json({ success: false, message: "Couldn't fetch user data" });
   }
 };
+
+module.exports = { userDataOnLogin };
